@@ -1,2 +1,16 @@
 <h1>Realestates#index</h1>
-<p>Find me in app/views/realestates/index.html.erb</p>
+<table>
+<tr>
+    <th>ID</th>
+    <th>TITLE</th>
+    <th>DETAILS</th>
+</tr>
+<% @realestates.each do  |realestate|%>
+    <tr>
+        <td> <%= realestate.id %></td>
+        <td> <%= realestate.title %></td>
+        <td> <%= realestate.details %></td>
+        <td> <%= link_to "show", realestate_path(realestate)%></td>
+    </td>
+<%end%>
+</table>
