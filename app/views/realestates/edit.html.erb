@@ -1,5 +1,14 @@
 <h1>Realestates#edit</h1>
-<p>Find me in app/views/realestates/edit.html.erb</p>
+<%=form_for @realestate,url:{action:"update"} do |f| %>
+<%= f.label :title%>
+<%= f.text_field :title%>
+<%= f.label :details%>
+<%= f.text_area :details , cols: "50", rows: "5"%>
+<button type="button" class="btn btn-dark"><%= f.submit "update"%></button>
+
+<% end%>
+
+
 
 
 

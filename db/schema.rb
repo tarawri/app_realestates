@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_06_16_175022) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "realestates", force: :cascade do |t|
     t.string "title"
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_realestates_on_user_id"
   end
 
@@ -33,4 +36,5 @@ ActiveRecord::Schema.define(version: 2019_06_16_175022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "realestates", "users"
 end

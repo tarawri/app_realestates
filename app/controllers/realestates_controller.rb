@@ -21,9 +21,16 @@ class RealestatesController < ApplicationController
 
 
   def edit
-  
+   @realestate = Realestate.find(params[:id])
   end
 
+  def update
+    @realestate = Realestate.find(params[:id]) 
+    @realestate.update(realestate_params)
+    redirect_to realestates_path
+  
+  
+  end
   def create 
     user_id = current_user.id
     @realestate = Realestate.create(realestate_params)
@@ -31,6 +38,12 @@ class RealestatesController < ApplicationController
     @realestate.save
     redirect_to realestates_path
   end 
+
+  def destroy
+    @realestate = Realestate.find(params[:id])
+    @realestate.destroy
+    redirect_to realestates_path
+  end
 
   private
   def realestate_params 

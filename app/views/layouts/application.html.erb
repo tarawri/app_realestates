@@ -13,14 +13,14 @@
   <nav>
 
 
-  <%= link_to "Home ", root_path%>
+  <button type="button" class="btn btn-dark"><%= link_to "Home ", root_path%></button>
   <% if user_signed_in? %>
-  <%= link_to "My Realestates", realestates_path	%>
-  <%= link_to "Add New Realestate", new_realestate_path%>
-    <%= link_to " Sign Out", destroy_user_session_path, method: :delete %>
+  <button type="button" class="btn btn-dark"><%= link_to "My Realestates", realestates_path	%></button>
+  <button type="button" class="btn btn-dark"><%= link_to "Add New Realestate", new_realestate_path%></button>
+  <button type="button" class="btn btn-dark"><%= link_to(" Sign Out", destroy_user_session_path, method: :delete)%></button>
   <%else%>
-   <%= link_to " Login ", new_user_session_path%>
-    <%= link_to " Signup ", new_user_registration_path%>
+   <button type="button" class="btn btn-dark"><%= link_to " Login ", new_user_session_path%></button>
+    <button type="button" class="btn btn-dark"><%= link_to " Signup ", new_user_registration_path%></button>
   <%end%>
    
   <nav>
