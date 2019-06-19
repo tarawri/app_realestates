@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commit: MyText
+  realestate: one
+
+two:
+  commit: MyText
+  realestate: two

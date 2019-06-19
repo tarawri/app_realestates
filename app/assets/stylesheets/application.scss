@@ -18,12 +18,15 @@
 
 
 
+body{
+    background-color: silver;
+
+}
 
 
-
- table {
-     border: 2px solid black;
- }
- table td {
+table {
     border: 2px solid black;
- }
+}
+table td {
+   border: 2px solid black;
+}

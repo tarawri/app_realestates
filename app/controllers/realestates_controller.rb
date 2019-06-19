@@ -10,6 +10,7 @@ class RealestatesController < ApplicationController
 
   def show
     @realestate = Realestate.find(params[:id])
+    @commit = @realestate.commits.new
     @user = User.find(@realestate.user_id)
   end
 
@@ -40,6 +41,7 @@ class RealestatesController < ApplicationController
   end 
 
   def destroy
+    
     @realestate = Realestate.find(params[:id])
     @realestate.destroy
     redirect_to realestates_path

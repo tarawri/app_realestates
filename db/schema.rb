@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_175022) do
+ActiveRecord::Schema.define(version: 2019_06_19_085903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "commits", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "realestate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["realestate_id"], name: "index_commits_on_realestate_id"
+  end
 
   create_table "realestates", force: :cascade do |t|
     t.string "title"
@@ -36,5 +44,6 @@ ActiveRecord::Schema.define(version: 2019_06_16_175022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "commits", "realestates"
   add_foreign_key "realestates", "users"
 end

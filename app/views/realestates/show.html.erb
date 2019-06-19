@@ -4,4 +4,50 @@
 <%= @realestate.details %>
 <br>
 <label>Email of User: </label>
+
+
 <%= @user.email %>
+
+<h1> View Commit</h1>
+
+<table> 
+<thead>
+<tr>
+<th>comments</th>
+</tr>
+</thead>
+<tbody>
+<br>
+<% @realestate.commits.each do |commit|%>
+<tr>
+<td> <%=commit.comment%></td>
+<td><%# comment.user.email %></td>
+</td>
+</tr>
+<% end %>
+
+</tbody>
+
+</table>
+
+<h1>Add Commit</h1>
+<%= form_for [@realestate,@commit] do |f| %>
+
+
+<div class = "field">
+<%= f.label :comment%>
+</div>
+
+<div>
+<%= f.text_area :comment, cols:30,rows:5%>
+</div>
+
+<div class = "action">
+    <%= f.button "Save"%>
+</div>
+<% end %>
+
+
+
+
+
