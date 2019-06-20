@@ -29,7 +29,7 @@
 </tbody>
 
 </table>
-
+<% if user_signed_in? %>
 <h1>Add Commit</h1>
 <%= form_for [@realestate,@commit] do |f| %>
 
@@ -48,6 +48,6 @@
 <% end %>
 
 
-
+<% end %>
 
 
